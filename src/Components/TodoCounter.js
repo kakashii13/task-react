@@ -1,7 +1,12 @@
 import React from "react";
+import "../Style/TodoCounter.css";
 
-function TodoCounter({ completedTodos, totalTodos }) {
-  return <h1>{`Has completado ${completedTodos} de ${totalTodos}`}</h1>;
+function TodoCounter({ completedTodos, totalTodos, loading }) {
+  return (
+    <h1
+      className={`${loading && "Loading-Counter"}`}
+    >{`Has completado ${completedTodos} de ${totalTodos}`}</h1>
+  );
 }
 
 export { TodoCounter };

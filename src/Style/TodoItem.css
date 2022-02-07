@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.TodoItem-active {
+  border: 1px solid #28a745;
+}
+
 .Icon {
   font-size: 15px;
   margin: 0 10px;
@@ -44,5 +48,6 @@
   color: #fff;
   position: absolute;
   right: -24px;
-  bottom: 23px;
+  bottom: 30px;
+  border: none;
 }

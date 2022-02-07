@@ -15,6 +15,12 @@
   transition: all 0.3s;
 }
 
+.CreateButton-loading {
+  background-color: #c2c2c2;
+  cursor: auto;
+  transition: none;
+  transform: none;
+}
 .CreateButton:hover {
   transform: rotate(180deg);
 }

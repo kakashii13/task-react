@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "../Style/TodoForm.css";
 
-function TodoForm({ setOpenModal, addTodo }) {
+function TodoForm({
+  setOpenModal,
+  addTodo,
+  setCreateAlert,
+  setCreateAlertText,
+  setAlertStyle,
+}) {
   const [value, setValue] = useState("");
 
   const onChange = (event) => {
@@ -10,8 +16,15 @@ function TodoForm({ setOpenModal, addTodo }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setOpenModal(false);
     addTodo(value);
+    setOpenModal(false);
+    setCreateAlert(true);
+    setCreateAlertText("Has creado una tarea");
+    setAlertStyle("success");
+    setTimeout(() => {
+      setCreateAlert(false);
+      setCreateAlertText("");
+    }, 2000);
   };
 
   const onCancel = () => {

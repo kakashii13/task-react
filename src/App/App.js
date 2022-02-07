@@ -8,8 +8,9 @@ import { CreateButton } from "../Components/CreateButton.js";
 import { useTodo } from "./useTodo.js";
 import { Modal } from "../Modal";
 import { TodoForm } from "../Components/TodoForm.js";
+import { Loading } from "../Components/Loading.js";
 import "react-loading-skeleton/dist/skeleton.css";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { CreateAlert } from "../Components/CreateAlert.js";
 
 function App() {
   const {
@@ -22,13 +23,29 @@ function App() {
     setOpenModal,
     addTodo,
     loading,
+    createAlert,
+    setCreateAlert,
+    createAlertText,
+    setCreateAlertText,
+    alertStyle,
+    setAlertStyle,
   } = useTodo();
 
   return (
     <>
-      <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
+      {createAlert && (
+        <CreateAlert
+          createAlertText={createAlertText}
+          alertStyle={alertStyle}
+        />
+      )}
+      <TodoCounter
+        totalTodos={totalTodos}
+        completedTodos={completedTodos}
+        loading={loading}
+      />
       <TodoList>
-        {loading && <Skeleton width={300} height={30} />}
+        {loading && <Loading />}
         {todos.map((todo) => (
           <TodoItem
             key={todo.text}
@@ -39,10 +56,16 @@ function App() {
           />
         ))}
       </TodoList>
-      <CreateButton setOpenModal={setOpenModal} />
+      <CreateButton setOpenModal={setOpenModal} loading={loading} />
       {openModal && (
         <Modal>
-          <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
+          <TodoForm
+            addTodo={addTodo}
+            setOpenModal={setOpenModal}
+            setCreateAlert={setCreateAlert}
+            setCreateAlertText={setCreateAlertText}
+            setAlertStyle={setAlertStyle}
+          />
         </Modal>
       )}
     </>

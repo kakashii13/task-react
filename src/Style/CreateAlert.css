@@ -1,0 +1,15 @@
+.CreateAlert {
+  margin: 0;
+  padding: 10px 40px;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.CreateAlert-succes {
+  background-color: #28a745;
+}
+
+.CreateAlert-delete {
+  background-color: #fa5246;
+}

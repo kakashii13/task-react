@@ -8,6 +8,9 @@ function useTodo() {
     loading,
   } = useLocalStorage("TODOS_V1", []);
   const [openModal, setOpenModal] = useState(false);
+  const [createAlert, setCreateAlert] = useState(false);
+  const [createAlertText, setCreateAlertText] = useState("");
+  const [alertStyle, setAlertStyle] = useState(undefined);
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
@@ -19,6 +22,13 @@ function useTodo() {
     const newTodo = [...todos];
     newTodo[index].completed = true;
     setTodos(newTodo);
+    setCreateAlert(true);
+    setCreateAlertText("Has completado una tarea");
+    setAlertStyle("success");
+    setTimeout(() => {
+      setCreateAlertText("");
+      setCreateAlert(false);
+    }, 2000);
   };
 
   // deleteTodo
@@ -28,6 +38,13 @@ function useTodo() {
     const newTodo = [...todos];
     newTodo.splice(index, 1);
     setTodos(newTodo);
+    setCreateAlert(true);
+    setCreateAlertText("Has eliminado una tarea");
+    setAlertStyle("delete");
+    setTimeout(() => {
+      setCreateAlertText("");
+      setCreateAlert(false);
+    }, 2000);
   };
 
   // addTodo
@@ -55,6 +72,12 @@ function useTodo() {
     setOpenModal,
     addTodo,
     loading,
+    createAlert,
+    setCreateAlert,
+    createAlertText,
+    setCreateAlertText,
+    alertStyle,
+    setAlertStyle,
   };
 }
 
