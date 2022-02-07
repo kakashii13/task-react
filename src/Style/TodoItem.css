@@ -1,0 +1,48 @@
+.TodoItem {
+  margin: 20px 0;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.068);
+  position: relative;
+}
+
+.Icon {
+  font-size: 15px;
+  margin: 0 10px;
+  padding: 1px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Text {
+  margin: 0 50px;
+}
+
+.Icon-check {
+  position: absolute;
+  left: 5px;
+}
+
+.Icon-check--active {
+  color: green;
+}
+
+.Icon-delete {
+  background-color: #fa5246;
+  color: #fff;
+  position: absolute;
+  right: -24px;
+  bottom: 23px;
+}

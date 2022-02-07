@@ -1,0 +1,39 @@
+.TodoForm {
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+}
+
+.Text-area {
+  height: 50px;
+  width: 400px;
+  padding: 10px;
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+.Button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.Button {
+  width: 30vw;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  margin: 5px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.Button-add {
+  background-color: rgb(52, 110, 218);
+  color: #fff;
+}
+
+.Button-cancel {
+  background-color: #f44336;
+  color: #fff;
+}

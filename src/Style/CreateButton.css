@@ -1,0 +1,20 @@
+.CreateButton {
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  margin: 16px 0;
+  height: 30px;
+  width: 30px;
+  background-color: #2078db;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.CreateButton:hover {
+  transform: rotate(180deg);
+}
