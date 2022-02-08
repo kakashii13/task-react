@@ -1,0 +1,9 @@
+.DarkMode {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+.DarkMode img {
+  cursor: pointer;
+}

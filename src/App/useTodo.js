@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 function useTodo() {
@@ -11,6 +11,7 @@ function useTodo() {
   const [createAlert, setCreateAlert] = useState(false);
   const [createAlertText, setCreateAlertText] = useState("");
   const [alertStyle, setAlertStyle] = useState(undefined);
+  const [darkMode, setDarkMode] = useState(false);
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
@@ -62,6 +63,10 @@ function useTodo() {
     setTodos(newTodo);
   };
 
+  // darkmode
+
+  const darkModeStyle = () => {};
+
   return {
     completedTodos,
     totalTodos,
@@ -78,6 +83,8 @@ function useTodo() {
     setCreateAlertText,
     alertStyle,
     setAlertStyle,
+    darkMode,
+    setDarkMode,
   };
 }
 
