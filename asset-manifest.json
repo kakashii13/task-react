@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kakashii13/task-react/static/css/main.63f0179d.css",
+    "main.js": "/kakashii13/task-react/static/js/main.dace107b.js",
+    "index.html": "/kakashii13/task-react/index.html",
+    "main.63f0179d.css.map": "/kakashii13/task-react/static/css/main.63f0179d.css.map",
+    "main.dace107b.js.map": "/kakashii13/task-react/static/js/main.dace107b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63f0179d.css",
+    "static/js/main.dace107b.js"
+  ]
+}
