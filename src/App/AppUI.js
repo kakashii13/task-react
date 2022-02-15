@@ -32,11 +32,16 @@ function AppUI() {
     setAlertStyle,
     darkMode,
     setDarkMode,
+    newDarkMode,
   } = useTodo();
 
   return (
     <div className={`App ${darkMode && "App-dark"}`}>
-      <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
+      <DarkMode
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        newDarkMode={newDarkMode}
+      />
 
       {createAlert && (
         <CreateAlert

@@ -11,8 +11,32 @@ function useTodo() {
   const [createAlert, setCreateAlert] = useState(false);
   const [createAlertText, setCreateAlertText] = useState("");
   const [alertStyle, setAlertStyle] = useState(undefined);
-  const [darkMode, setDarkMode] = useState(false);
 
+  // localStorage
+  const [darkMode, setDarkMode] = useState(undefined);
+
+  const getLS = localStorage.getItem("DarkMode");
+  let parsedItem;
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!getLS) {
+        localStorage.setItem("DarkMode", JSON.stringify(darkMode));
+        parsedItem = false;
+      } else {
+        parsedItem = JSON.parse(getLS);
+      }
+      setDarkMode(parsedItem);
+    });
+  }, []);
+
+  const newDarkMode = (prueba) => {
+    const modeLS = JSON.stringify(darkMode);
+    localStorage.setItem("DarkMode", modeLS);
+    setDarkMode(prueba);
+  };
+
+  // todo length
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
 
@@ -85,6 +109,7 @@ function useTodo() {
     setAlertStyle,
     darkMode,
     setDarkMode,
+    newDarkMode,
   };
 }
 

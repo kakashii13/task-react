@@ -6,7 +6,7 @@
 
 .Text-area {
   height: 50px;
-  width: 400px;
+  width: auto;
   padding: 10px;
   resize: none;
   outline: none;

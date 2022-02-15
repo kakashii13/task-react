@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../Style/DarkMode.css";
 
-function DarkMode({ darkMode, setDarkMode }) {
-  const onClick = () => {
-    setDarkMode((prevState) => !prevState);
-  };
-
+function DarkMode({ darkMode, setDarkMode, newDarkMode }) {
   return (
     <div className="DarkMode">
       <img
-        onClick={onClick}
+        onClick={() => newDarkMode((prevState) => !prevState)}
         src={`${
           (!darkMode &&
             "https://icongr.am/fontawesome/toggle-off.svg?size=30&color=currentColor") ||
